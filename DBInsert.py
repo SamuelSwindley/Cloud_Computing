@@ -16,10 +16,9 @@ def remove_dot_key(obj):
             del obj[key]
     return obj
 
-while (true) {
+while (True) :
     time.sleep(60)
     data = json.loads(urllib2.urlopen("http://localhost:4000/api/v1.3/subcontainers/docker").read(), object_hook=remove_dot_key) 
-    db.results.insert_many(data)
-    
-}
+    db.results.insert_many(data) 
+
 
